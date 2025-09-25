@@ -181,13 +181,12 @@ nav a.active {
 
 /* =============== Footer =============== */
 footer {
-  background: var(--bg);
-  color: var(--text);
-  text-align: center;
-  padding: 1.5rem 2rem;
-  font-size: .95rem;
-  border-top: 3px solid var(--accent);
-}
+            background-color: #b8942e;
+            color: #fff8e5;
+            padding: 30px 20px 10px;
+            text-align: center;
+        }
+        body.light-theme footer { background-color: #6a8eab; }
 
 /* =============== Intro (logo de entrada) =============== */
 .intro {

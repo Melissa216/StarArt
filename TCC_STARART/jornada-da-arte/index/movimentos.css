@@ -27,47 +27,49 @@ body.light-theme {
   padding: 0 20px;
 }
 
-/* Header */
+/* =============== Header =============== */
 header {
-  background-color: #0A192F;
-  padding: 15px 0;
-  border-bottom: 1px solid #D4AF37;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  position: relative;
+  top: 0;
+  z-index: 1000;
+  background: var(--bg, #0A192F);
+  border-bottom: 1px solid var(--accent, #D4AF37);
+  box-shadow: 0 4px 10px var(--shadow, rgba(0, 0, 0, 0.4));
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  height: 135px;
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 body.light-theme header {
-  background-color: #ffffff;
+  background: #ffffff;
   border-bottom: 1px solid #D4AF37;
 }
 
-.logo h1, .logo-text {
-  font-size: 24px;
-  color: #D4AF37;
-  font-weight: bold;
+/* Logo */
+.logo img {
+  height: 150px;
+  width: auto;
+  display: block;
+  transition: transform 0.3s ease, height 0.3s ease;
 }
 
 /* Navegação */
-nav ul {
-  list-style: none;
+nav {
   display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
+  gap: 20px;
+  align-items: center;
 }
 
-nav ul li a, nav a {
+nav a {
   text-decoration: none;
-  color: #E0E0E0;
+  color: var(--text, #E0E0E0);
   font-weight: 500;
   font-size: 1rem;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 body.light-theme nav a {
@@ -76,8 +78,8 @@ body.light-theme nav a {
 
 nav a:hover,
 nav a.active {
-  color: #D4AF37;
-  border-bottom: 2px solid #D4AF37;
+  color: var(--accent, #D4AF37);
+  border-bottom: 2px solid var(--accent, #D4AF37);
   padding-bottom: 3px;
 }
 
@@ -95,6 +97,12 @@ nav a.active {
   z-index: 9999;
   box-shadow: 0 0 8px #D4AF37;
   color: #0A192F;
+}
+
+body.light-theme .theme-toggle {
+  background-color: #6a8eab;
+  box-shadow: 0 0 8px #6a8eab;
+  color: #ffffff;
 }
 
 /* Hero Section */
@@ -262,13 +270,19 @@ body.light-theme footer {
 @media (max-width: 768px) {
   header {
     flex-direction: column;
+    height: auto;
     text-align: center;
+    gap: 10px;
   }
 
-  nav ul {
+  nav {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+  }
+
+  .logo img {
+    height: 120px;
   }
 
   .movement-details {
