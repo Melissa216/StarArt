@@ -119,13 +119,18 @@ header {
     display: flex;
   align-items: center;
   padding: 10px 20px;
- 
+  height: 135px; /* altura fixa do header */
 }
 
+ 
+
+
 .logo img {
-  height: 50px; /* ajusta o tamanho */
+  height: 150px;   /* aumenta a altura */
+  width: auto;     /* mantém a proporção */
   display: block;
 }
+
 
 
 /* Navegação */
