@@ -116,11 +116,17 @@ header {
   box-shadow: 0 4px 10px var(--shadow);
   padding: 1rem 2rem;
   display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
+    display: flex;
+  align-items: center;
+  padding: 10px 20px;
+ 
 }
 
-.logo-text {
-  font-size: 1.8rem; font-weight: 700; color: var(--accent);
+.logo img {
+  height: 50px; /* ajusta o tamanho */
+  display: block;
 }
+
 
 /* Navegação */
 nav { display: flex; gap: 20px; }
