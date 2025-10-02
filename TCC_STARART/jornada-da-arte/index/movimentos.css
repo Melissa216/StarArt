@@ -1,24 +1,38 @@
-/* Fonte principal */
+/* ==================== Fonte ==================== */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
-/* Reset básico */
+/* ==================== Reset ==================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ==================== Variáveis ==================== */
+:root {
+  --bg-dark: #0A192F;
+  --bg-light: #dbeeff;
+  --text-dark: #0A192F;
+  --text-light: #E0E0E0;
+  --accent: #D4AF37;
+  --shadow: rgba(0, 0, 0, 0.4);
+  --brown: #5C4033;
+  --cream: #FDF5E6;
+  --cream-border: #F0E6D2;
+}
+
+/* ==================== Body ==================== */
 body {
   font-family: 'Playfair Display', serif;
   line-height: 1.6;
-  background-color: #0A192F;
-  color: #E0E0E0;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body.light-theme {
-  background-color: #dbeeff;
-  color: #0A192F;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
 }
 
 .container {
@@ -27,14 +41,14 @@ body.light-theme {
   padding: 0 20px;
 }
 
-/* =============== Header =============== */
+/* ==================== Header ==================== */
 header {
   position: relative;
   top: 0;
   z-index: 1000;
-  background: var(--bg, #0A192F);
-  border-bottom: 1px solid var(--accent, #D4AF37);
-  box-shadow: 0 4px 10px var(--shadow, rgba(0, 0, 0, 0.4));
+  background: var(--bg-dark);
+  border-bottom: 1px solid var(--accent);
+  box-shadow: 0 4px 10px var(--shadow);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -45,8 +59,8 @@ header {
 }
 
 body.light-theme header {
-  background: #ffffff;
-  border-bottom: 1px solid #D4AF37;
+  background: #fff;
+  border-bottom: 1px solid var(--accent);
 }
 
 /* Logo */
@@ -66,46 +80,47 @@ nav {
 
 nav a {
   text-decoration: none;
-  color: var(--text, #E0E0E0);
+  color: var(--text-light);
   font-weight: 500;
   font-size: 1rem;
   transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 body.light-theme nav a {
-  color: #0A192F;
+  color: var(--text-dark);
 }
 
 nav a:hover,
 nav a.active {
-  color: var(--accent, #D4AF37);
-  border-bottom: 2px solid var(--accent, #D4AF37);
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
   padding-bottom: 3px;
 }
 
-/* Botão alternar tema */
+/* ==================== Botão Tema ==================== */
 .theme-toggle {
   position: fixed;
   bottom: 1rem;
   right: 1rem;
-  background-color: #D4AF37;
+  background-color: var(--accent);
   border: none;
   border-radius: 50%;
   padding: 0.6rem 0.75rem;
   font-size: 1.5rem;
   cursor: pointer;
   z-index: 9999;
-  box-shadow: 0 0 8px #D4AF37;
-  color: #0A192F;
+  box-shadow: 0 0 8px var(--accent);
+  color: var(--bg-dark);
+  transition: all 0.3s ease;
 }
 
 body.light-theme .theme-toggle {
   background-color: #6a8eab;
   box-shadow: 0 0 8px #6a8eab;
-  color: #ffffff;
+  color: #fff;
 }
 
-/* Hero Section */
+/* ==================== Hero ==================== */
 .hero {
   background: linear-gradient(to bottom right, #0A192F, #112B50);
   text-align: center;
@@ -117,10 +132,11 @@ body.light-theme .hero {
   background: linear-gradient(to bottom right, #dbeeff, #c9e1ff);
 }
 
-.hero h2, .hero h1 {
+.hero h1,
+.hero h2 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: #D4AF37;
+  color: var(--accent);
 }
 
 .hero p {
@@ -128,7 +144,7 @@ body.light-theme .hero {
   color: inherit;
 }
 
-/* Art Movement Sections */
+/* ==================== Movimentos Artísticos ==================== */
 .art-movement {
   background-color: #112B50;
   margin: 30px auto;
@@ -145,7 +161,7 @@ body.light-theme .art-movement {
 
 .art-movement h3 {
   font-size: 28px;
-  color: #D4AF37;
+  color: var(--accent);
   margin-bottom: 25px;
   text-align: center;
 }
@@ -164,14 +180,12 @@ body.light-theme .art-movement {
 .movement-details .description p {
   margin-bottom: 15px;
   font-size: 16px;
-  color: inherit;
 }
 
 .movement-details .description h4 {
   font-size: 18px;
-  color: #D4AF37;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  color: var(--accent);
+  margin: 20px 0 10px;
 }
 
 .movement-details .description ul {
@@ -185,21 +199,21 @@ body.light-theme .art-movement {
 
 .notable-artists {
   flex: 1;
-  background-color: #FDF5E6;
+  background-color: var(--cream);
   padding: 20px;
   border-radius: 8px;
-  border: 1px solid #F0E6D2;
+  border: 1px solid var(--cream-border);
 }
 
 .notable-artists h4 {
   font-size: 18px;
-  color: #5C4033;
+  color: var(--brown);
   margin-bottom: 10px;
 }
 
 .notable-artists ul {
   list-style: none;
-  color: #5C4033;
+  color: var(--brown);
 }
 
 .notable-artists ul li {
@@ -210,24 +224,24 @@ body.light-theme .art-movement {
 
 .notable-artists ul li::before {
   content: '•';
-  color: #5C4033;
+  color: var(--brown);
   position: absolute;
   left: 0;
 }
 
-/* Footer */
+/* ==================== Footer ==================== */
 footer {
-  background-color: #0A192F;
-  color: #E0E0E0;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
   padding: 30px 0;
   margin-top: 40px;
-  border-top: 1px solid #D4AF37;
+  border-top: 1px solid var(--accent);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body.light-theme footer {
-  background-color: #5C4033;
-  color: #ffffff;
+  background-color: var(--brown);
+  color: #fff;
 }
 
 .footer-content {
@@ -244,7 +258,6 @@ body.light-theme footer {
 
 .footer-info p {
   font-size: 14px;
-  color: inherit;
 }
 
 .footer-social a {
@@ -255,7 +268,7 @@ body.light-theme footer {
 }
 
 .footer-social a:hover {
-  color: #D4AF37;
+  color: var(--accent);
 }
 
 .copyright {
@@ -266,7 +279,7 @@ body.light-theme footer {
   border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Responsividade */
+/* ==================== Responsividade ==================== */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -277,7 +290,6 @@ body.light-theme footer {
 
   nav {
     flex-direction: column;
-    align-items: center;
     gap: 10px;
   }
 
